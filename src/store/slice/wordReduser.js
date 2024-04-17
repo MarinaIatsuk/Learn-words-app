@@ -16,7 +16,6 @@ export const getWordServer = createAsyncThunk("getWordServer", async () => {
 export const addNewWord = createAsyncThunk(
   "addNewWord",
   async ({ englishValue, transcriptionValue, russianValue }, { dispatch }) => {
-    //здесь переменные убираем в объект, чтобы все они считались первым параметром
     const newWord = {
       english: englishValue,
       transcription: `[${transcriptionValue}]`,
@@ -56,7 +55,7 @@ export const deleteWord = createAsyncThunk(
       if (!response.ok) {
         throw new Error("Ошибка сервера");
       }
-      
+
       dispatch(removeWord(id));
     } catch (error) {
       console.error("Ошибка при удалении слова:", error);
@@ -64,16 +63,20 @@ export const deleteWord = createAsyncThunk(
     }
   }
 );
+
 export const updateWord = createAsyncThunk(
   "updateWord",
-  async ({ id, englishValue, transcriptionValue, russianValue }, { dispatch }) => {
+  async (
+    { id, englishValue, transcriptionValue, russianValue },
+    { dispatch }
+  ) => {
     const updatedWord = {
       id: id,
       english: englishValue,
       transcription: transcriptionValue,
       russian: russianValue,
-      tags: "", // Пустая строка для поля tags
-      tags_json: "" // Пустая строка для поля tags_json
+      tags: "",
+      tags_json: "",
     };
     console.log(updatedWord);
 
@@ -91,17 +94,15 @@ export const updateWord = createAsyncThunk(
       }
       const data = await response.json();
       console.log("Данные с сервера:", data);
-      
-      dispatch(updateWordSuccess(data)); // Внесли исправление: вызываем dispatch с обновленными данными
-      return data; // Возвращаем обновленные данные слова
+
+      dispatch(updateWordSuccess(data));
+      return data;
     } catch (error) {
       console.error("Ошибка при обновлении слова:", error);
       throw error;
     }
   }
 );
-
-
 
 const wordSlice = createSlice({
   name: "word",
@@ -117,18 +118,18 @@ const wordSlice = createSlice({
     },
     addWord(state, action) {
       state.words.push(action.payload);
-      
     },
     removeWord(state, action) {
       state.words.filter((item) => item.id !== action.payload.id);
-      
     },
     updateWordSuccess(state, action) {
-      const index = state.words.findIndex((word) => word.id === action.payload.id);
+      const index = state.words.findIndex(
+        (word) => word.id === action.payload.id
+      );
       if (index !== -1) {
         state.words[index] = action.payload;
       }
-    }
+    },
   },
 
   extraReducers: (builder) => {
@@ -142,8 +143,8 @@ const wordSlice = createSlice({
     builder.addCase(getWordServer.rejected, (state) => {
       state.error = true;
     });
-    
   },
 });
-export const { donloadWords, addWord, removeWord,updateWordSuccess } = wordSlice.actions;
+export const { donloadWords, addWord, removeWord, updateWordSuccess } =
+  wordSlice.actions;
 export default wordSlice.reducer;

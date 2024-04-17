@@ -13,7 +13,6 @@ const Home = () => {
     dispatch(getWordServer());
   }, []);
 
-
   return (
     <>
       <div className={style.table}>
@@ -26,7 +25,7 @@ const Home = () => {
 
         <AddWord />
 
-        {data.data && //отображаем данные только в том случае, когда они загрузились с апи, чтобы не пыталось отрисоваться без данных
+        {data.data &&
           data.data.map((item) => (
             <Line
               key={item.id}

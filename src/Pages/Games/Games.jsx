@@ -14,7 +14,7 @@ export default function Games() {
 
   console.log(data);
 
-  const [currentIndex, setCurrentIndex] = useState(0); //хук для индексов, чтобы можно было перелистывать карточки
+  const [currentIndex, setCurrentIndex] = useState(0); 
   function goToPreviousCard() {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);

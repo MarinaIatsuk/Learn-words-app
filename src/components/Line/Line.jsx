@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import style from "./Line.module.scss";
 import { useDispatch } from "react-redux";
-import { deleteWord, getWordServer,updateWord } from "../../store/slice/wordReduser";
+import {
+  deleteWord,
+  getWordServer,
+  updateWord,
+} from "../../store/slice/wordReduser";
 
 const Line = ({ id, english, transcription, russian, saveChanges }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -10,12 +14,10 @@ const Line = ({ id, english, transcription, russian, saveChanges }) => {
   const [editedRussian, setEditedRussian] = useState(russian);
   const dispatch = useDispatch();
 
-  //Обработчик для нажания на кнопку редактирования. Переводит состояние редактирования в true
   const editLine = () => {
     setIsEditing(true);
   };
 
-  //Обработчик для нажания на кнопку отмены редактирования.  Возвоащает состояние редактирования в false
   const cancelEdit = () => {
     setIsEditing(false);
     setEditedEnglish(english);
@@ -23,10 +25,7 @@ const Line = ({ id, english, transcription, russian, saveChanges }) => {
     setEditedRussian(russian);
   };
 
-  //Слушатель на кнопку сохранения
   const saveEdit = () => {
-    //проверка полей перед сохранением (не знаю, на какие ошибки проверять)
-    //trim() удаляет пробельные символы с начала и конца строки
     if (
       editedEnglish.trim() === "" ||
       editedTranscription.trim() === "" ||
@@ -36,34 +35,33 @@ const Line = ({ id, english, transcription, russian, saveChanges }) => {
       return;
     }
     setIsEditing(false);
-    updateWordOnServer()
+    updateWordOnServer();
   };
 
   function deleteLine() {
-    dispatch(deleteWord(id))
-    .then(() => {
+    dispatch(deleteWord(id)).then(() => {
       dispatch(getWordServer());
     });
   }
   const updateWordOnServer = async () => {
     try {
-      await dispatch(updateWord({ 
-        id: id,
-        englishValue: editedEnglish,
-        transcriptionValue: editedTranscription,
-        russianValue: editedRussian 
-      }));
-      dispatch(getWordServer()); // После успешного обновления слова загрузить обновленные данные
+      await dispatch(
+        updateWord({
+          id: id,
+          englishValue: editedEnglish,
+          transcriptionValue: editedTranscription,
+          russianValue: editedRussian,
+        })
+      );
+      dispatch(getWordServer());
     } catch (error) {
       console.error("Ошибка при обновлении слова:", error);
-      // Обработка ошибок при обновлении слова
     }
   };
-  
+
   return (
     <div className={style.table__line}>
       {isEditing ? (
-        //если поле находится в режиме редактирования(пользователь нажал на кнопку и  setIsEditing перешло в true), то отрисовываем инпуты вместо слов
         <>
           <input
             className={style.table__english}
