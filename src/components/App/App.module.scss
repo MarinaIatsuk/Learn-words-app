@@ -1,0 +1,21 @@
+.globalContainer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  //height: 100%;
+}
+header{
+ display: flex;
+ flex-basis: 20%;
+}
+main{
+  display: flex;
+  flex-direction: column;
+ flex-basis: 80%;
+ align-items: center;
+ padding-top: 120px;
+}
+footer{
+  display: flex;
+ flex-basis: 20%;
+}

@@ -1,0 +1,27 @@
+
+.table__add{
+    display: grid;
+    grid-template-columns: repeat(4,0.6fr);
+    align-content: center;
+    background: rgba(210, 224, 170, 0.573);
+    border: 1px solid #608141bf;
+    border-radius: 10px;
+    padding-left: 15px;
+    
+    .table__english{
+        color: black;
+    }
+    .table__transcription{
+        color: black;
+    }
+    .table__russian{
+        color: black;
+    }
+    .table__buttons{
+        color: black;
+    }
+}
+
+.invalid{
+    text-decoration: underline dotted red;
+}

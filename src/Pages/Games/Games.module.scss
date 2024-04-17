@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.cards {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+
+  &__button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    background: #c0d8b9a7;
+    color: #fff;
+    border: 0;
+    font-size: 16px;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+  &__counter {
+    display: flex;
+    justify-content: center;
+  }
+}

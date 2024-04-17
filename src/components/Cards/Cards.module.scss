@@ -1,0 +1,32 @@
+.card{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+    height: 300px;
+    width: 250px;
+    border: 2px solid #2c6e18;
+    border-radius: 25px;
+    background-color: #c2f3b3;
+    cursor: pointer;
+    
+
+    &__word{
+        color: green;
+        font-size: 30px;
+        font-weight: bolder;
+    }
+    &__transcription{
+        color: rgb(80, 92, 80);
+        font-size: 30px;
+    }
+    &__translation{
+        color: rgb(41, 90, 41);
+        font-size: 30px;
+        font-weight: bolder;
+    }
+    &__button{
+        color: rgb(45, 92, 45);
+        text-align: center;
+    }
+}
