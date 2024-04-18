@@ -12,9 +12,17 @@
 
 ## Подробное описание проекта
 
-JS, React, Redux, SASS
+<img src="https://img.shields.io/badge/javascript-323330?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript"/>  <img src="https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge" alt="ReactJs"/> <img src="https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white" alt="redux-toolkit"/>
+ <img src="https://img.shields.io/badge/sass-CF649A?style=for-the-badge&logo=Sass&logoColor=white" alt="SASS"/> 
+<img src="https://img.shields.io/badge/vite-646CFF.svg?style=for-the-badge&logo=Vite&logoColor=white" alt="Vite"/>
 
 Загрузка/изменение/добавлени/удаление слов реализованы через API
+
+**установка:**
+```sh
+npm install
+npm run dev
+```
 
 ### Header
 
