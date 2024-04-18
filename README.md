@@ -1,7 +1,5 @@
 # Приложение для изучения слов
 
-## Функции приложения
-
 Данное приложение по изучению слов было разработано в рамках проектной работы.
 
 ✨Основная функциональность:
@@ -10,19 +8,10 @@
 - Возможность редактирования/удаление/добавления слова;
 - Изчучение слов по карточкам.
 
-## Подробное описание проекта
-
-<img src="https://img.shields.io/badge/javascript-323330?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript"/>  <img src="https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge" alt="ReactJs"/> <img src="https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white" alt="redux-toolkit"/>
- <img src="https://img.shields.io/badge/sass-CF649A?style=for-the-badge&logo=Sass&logoColor=white" alt="SASS"/> 
-<img src="https://img.shields.io/badge/vite-646CFF.svg?style=for-the-badge&logo=Vite&logoColor=white" alt="Vite"/>
-
 Загрузка/изменение/добавлени/удаление слов реализованы через API
 
-**установка:**
-```sh
-npm install
-npm run dev
-```
+<details>
+<summary><i>Подробное описание</i></summary>
 
 ### Header
 
@@ -37,12 +26,36 @@ Header содержит:
 
 - Строчки со словами, где в каждой строчке есть возможность удаления и редактирования слова.
 
-
 ### Game page
 
-На этой странице пользователь видит карточки из таблицы со словами без перевода. 
+На этой странице пользователь видит карточки из таблицы со словами без перевода.
 
 При нажатии на карточку, открывается перевод слова и оно добавляется в счетчик изученных слов за "сессию".
- 
+
 Переключение карточек осуществляется по стрелочкам.
 
+</details>
+
+---
+
+### Технологии и инструменты
+
+<div align="center">
+    <img src="https://img.shields.io/badge/javascript-323330?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript"/>
+    <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
+    <img src="https://img.shields.io/badge/sass-CF649A?style=for-the-badge&logo=Sass&logoColor=white" alt="SASS"/>
+    <img src="https://img.shields.io/badge/git-%23F05033?style=for-the-badge&logo=git&logoColor=white" alt="Git"/>
+    <img src="https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white" alt="redux-toolkit"/>
+    <img src="https://img.shields.io/badge/vite-646CFF.svg?style=for-the-badge&logo=Vite&logoColor=white" alt="Vite"/>
+    <img src="https://img.shields.io/badge/api-1B1818?style=for-the-badge"/>
+</div>
+
+
+
+**установка:**
+
+```sh
+git clone git@github.com:MarinaIatsuk/Learn-words-app.git
+npm install
+npm run dev
+```
