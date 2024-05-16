@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const getWordServer = createAsyncThunk("getWordServer", async () => {
+export const getWordServer = createAsyncThunk(
+  "getWordServer", async () => {
   try {
     const response = await fetch("/api/words");
     if (!response.ok) {
