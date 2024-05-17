@@ -4,7 +4,11 @@ export const getWordServer = createAsyncThunk(
   "getWordServer", async () => {
   try {
     //const response = await fetch("https://itgirlschool.justmakeit.ru/api/words");
-    const response = await fetch("/api/words");
+    const response = await fetch("/api/words", {
+      headers: {
+        "X-Forwarded-Host": "itgirlschool.justmakeit.ru"
+      }
+    });
     if (!response.ok) {
       throw new Error("Server error");
     }
