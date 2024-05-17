@@ -25,7 +25,7 @@ export const addNewWord = createAsyncThunk(
     };
 
     try {
-      const response = await fetch(`https://itgirlschool.justmakeit.ru/api/words/add`, {
+      const response = await fetch(`/api/words/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export const deleteWord = createAsyncThunk(
   "deleteWord",
   async (id, { dispatch }) => {
     try {
-      const response = await fetch(`https://itgirlschool.justmakeit.ru/api/words/${id}/delete`, {
+      const response = await fetch(`api/words/${id}/delete`, {
         method: "POST",
       });
 
@@ -83,7 +83,7 @@ export const updateWord = createAsyncThunk(
     console.log(updatedWord);
 
     try {
-      const response = await fetch(`https://itgirlschool.justmakeit.ru/api/words/${id}/update`, {
+      const response = await fetch(`/api/words/${id}/update`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
