@@ -1,9 +1,11 @@
 {
       
-        "rewrites": [
-            { "source": "/api/(.*)", "destination": "http://itgirlschool.justmakeit.ru/" },
-            { "source": "/(.*)", "destination": "/index.html" }
-        ],
+    "rewrites": [
+        {
+          "source": "/proxy/:match*",
+          "destination": "https://itgirlschool.justmakeit.ru/:match*"
+        }
+      ],
     
 
     "headers": [
